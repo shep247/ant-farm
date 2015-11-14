@@ -2,25 +2,30 @@ from thespian.actors import Actor, WakeupMessage
 from datetime import timedelta
 from sprites import AddSprite, MoveSpriteTo
 
-class AddCrumbSprite(AddSprite): pass
+
+class AddCrumbSprite(AddSprite):
+    pass
+
 
 class UpdateSpriteLocations(object):
-    def __init__(self, allSprites):
-        self.sprites = allSprites
+    def __init__(self, all_sprites):
+        self.sprites = all_sprites
+
 
 class StartCrumb(object):
-    def __init__(self, xpos, ypos, allsprites, drawer):
+    def __init__(self, xpos, ypos, all_sprites, drawer):
         self.xpos = xpos
         self.ypos = ypos
-        self.sprites = allsprites
+        self.sprites = all_sprites
         self.drawer = drawer
+
 
 class CrumbSpriteActor(Actor):
     def __init__(self):
         self.img = 'crumb.png'
         self.xpos = 10
         self.ypos = 10
-        self.sprites = {} #senderAddr:(img, xpos, ypos)
+        self.sprites = {}  # senderAddr:(img, xpos, ypos)
         self.notifiedSprites = []
         self.drawer = None
         

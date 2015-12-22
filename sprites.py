@@ -84,7 +84,6 @@ class AntSpriteActor(Actor):
     def _remove_from_drawer(self):
         self.send(self.drawer, RemoveSprite(self.img, self.xpos, self.ypos))
 
-    @static
     def _get_new_pos(self, pos, dest_pos, maxnum_of_steps):
         if pos != dest_pos:
             difference = pos - dest_pos
